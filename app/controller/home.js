@@ -1,7 +1,5 @@
 'use strict';
 
-const comments = require('../model/comments');
-
 const Controller = require('egg').Controller;
 
 function toInt(str) {
@@ -36,7 +34,6 @@ class HomeController extends Controller {
     const { query } = ctx;
 
     const comment = await ctx.model.Comments.findByPk(query.id);
-    console.log(comment);
     if (!comment) {
       ctx.status = 404;
 
@@ -69,7 +66,6 @@ class HomeController extends Controller {
     const { query } = ctx;
 
     const comment = await ctx.model.Comments.findByPk(query.id);
-    console.log(comment);
     if (!comment) {
       ctx.status = 404;
       
